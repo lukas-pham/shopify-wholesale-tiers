@@ -1,0 +1,31 @@
+# Link to your own app with `shopify app config link` (client_id is filled in then).
+name = "Wholesale Tiers"
+client_id = "00000000000000000000000000000000"
+application_url = "https://example.com"
+embedded = true
+
+[access_scopes]
+scopes = "write_discounts"
+
+[build]
+include_config_on_deploy = true
+
+[auth]
+redirect_urls = ["https://example.com/auth/callback"]
+
+[webhooks]
+api_version = "2026-07"
+
+# App-owned custom data, created on install (declarative definitions).
+# $app:wholesale_approved — the merchant switches it on per customer in the admin.
+[customer.metafields.app.wholesale_approved]
+type = "boolean"
+name = "Wholesale approved"
+description = "Gets tiered wholesale pricing at checkout"
+access.admin = "merchant_read_write"
+
+# $app:wholesale_tiers — tier table read by the discount Function and the checkout progress block.
+[shop.metafields.app.wholesale_tiers]
+type = "json"
+name = "Wholesale tiers"
+access.admin = "merchant_read_write"

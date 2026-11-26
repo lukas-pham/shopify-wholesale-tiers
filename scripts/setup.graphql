@@ -1,0 +1,23 @@
+# 1. Create the automatic discount that runs the Function (product discount class only).
+mutation CreateWholesaleDiscount($discount: DiscountAutomaticAppInput!) {
+  discountAutomaticAppCreate(automaticAppDiscount: $discount) {
+    automaticAppDiscount { discountId title status }
+    userErrors { field message }
+  }
+}
+
+# 2. Write the tier table to the shop (read by the Function AND the checkout block).
+mutation SetWholesaleTiers($metafields: [MetafieldsSetInput!]!) {
+  metafieldsSet(metafields: $metafields) {
+    metafields { key namespace value }
+    userErrors { field message }
+  }
+}
+
+# 3. Approve a customer for wholesale pricing (or tick "Wholesale approved" on the customer page in the admin).
+mutation ApproveWholesaleCustomer($metafields: [MetafieldsSetInput!]!) {
+  metafieldsSet(metafields: $metafields) {
+    metafields { key value }
+    userErrors { field message }
+  }
+}

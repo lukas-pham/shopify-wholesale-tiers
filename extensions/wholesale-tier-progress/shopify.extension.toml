@@ -1,0 +1,19 @@
+api_version = "2026-07"
+
+[[extensions]]
+name = "Wholesale tier progress"
+handle = "wholesale-tier-progress"
+type = "ui_extension"
+
+[[extensions.targeting]]
+module = "./src/Checkout.jsx"
+target = "purchase.checkout.cart-line-list.render-after"
+
+# Same two app-owned metafields the discount Function reads.
+[[extensions.metafields]]
+namespace = "$app"
+key = "wholesale_tiers"
+
+[[extensions.metafields]]
+namespace = "$app"
+key = "wholesale_approved"

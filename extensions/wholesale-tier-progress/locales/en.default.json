@@ -1,0 +1,7 @@
+{
+  "heading": "Wholesale pricing",
+  "active": "{{percentage}}% off applied for {{units}} units.",
+  "next": "Add {{missing}} more units to get {{percentage}}% off.",
+  "top": "You have the best wholesale price.",
+  "start": "Wholesale pricing starts at {{units}} units ({{percentage}}% off)."
+}

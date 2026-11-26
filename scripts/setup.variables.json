@@ -1,0 +1,24 @@
+{
+  "CreateWholesaleDiscount": {
+    "discount": {
+      "title": "Wholesale tiers",
+      "functionHandle": "wholesale-tier-discount",
+      "discountClasses": ["PRODUCT"],
+      "startsAt": "2026-12-01T00:00:00Z",
+      "combinesWith": { "orderDiscounts": false, "productDiscounts": false, "shippingDiscounts": true }
+    }
+  },
+  "SetWholesaleTiers": {
+    "metafields": [
+      {
+        "ownerId": "gid://shopify/Shop/REPLACE_ME",
+        "key": "wholesale_tiers",
+        "type": "json",
+        "value": "{\"tiers\":[{\"minQuantity\":12,\"percentage\":10},{\"minQuantity\":24,\"percentage\":15},{\"minQuantity\":48,\"percentage\":20}]}"
+      }
+    ]
+  },
+  "ApproveWholesaleCustomer": {
+    "metafields": [{ "ownerId": "gid://shopify/Customer/REPLACE_ME", "key": "wholesale_approved", "type": "boolean", "value": "true" }]
+  }
+}

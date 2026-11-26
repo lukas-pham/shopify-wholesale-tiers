@@ -1,0 +1,58 @@
+{
+  "payload": {
+    "export": "cart-lines-discounts-generate-run",
+    "target": "cart.lines.discounts.generate.run",
+    "input": {
+      "cart": {
+        "buyerIdentity": {
+          "customer": {
+            "wholesaleApproved": {
+              "value": "true"
+            }
+          }
+        },
+        "lines": [
+          {
+            "id": "gid://shopify/CartLine/0",
+            "quantity": 30,
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/100",
+              "product": {
+                "excludedFromWholesale": false
+              }
+            }
+          }
+        ]
+      },
+      "discount": {
+        "discountClasses": [
+          "ORDER"
+        ]
+      },
+      "shop": {
+        "tiers": {
+          "jsonValue": {
+            "tiers": [
+              {
+                "minQuantity": 12,
+                "percentage": 10
+              },
+              {
+                "minQuantity": 24,
+                "percentage": 15
+              },
+              {
+                "minQuantity": 48,
+                "percentage": 20
+              }
+            ]
+          }
+        }
+      }
+    },
+    "output": {
+      "operations": []
+    }
+  }
+}
